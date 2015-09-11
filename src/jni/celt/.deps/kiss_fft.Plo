@@ -1,0 +1,137 @@
+celt/kiss_fft.lo: celt/kiss_fft.c config.h celt/_kiss_fft_guts.h \
+ celt/kiss_fft.h /usr/include/stdlib.h /usr/include/machine/ieeefp.h \
+ /usr/include/_ansi.h /usr/include/newlib.h /usr/include/sys/config.h \
+ /usr/include/sys/features.h /usr/include/cygwin/config.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/4.9.2/include/stddef.h \
+ /usr/include/sys/reent.h /usr/include/_ansi.h /usr/include/sys/_types.h \
+ /usr/include/machine/_types.h /usr/include/machine/_default_types.h \
+ /usr/include/sys/lock.h /usr/include/sys/cdefs.h \
+ /usr/include/machine/stdlib.h /usr/include/alloca.h \
+ /usr/include/cygwin/stdlib.h /usr/include/cygwin/wait.h \
+ /usr/include/math.h celt/arch.h include/opus_types.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/4.9.2/include/stdint.h \
+ /usr/include/stdint.h /usr/include/sys/_intsup.h \
+ /usr/include/sys/_stdint.h include/opus_defines.h include/opus_types.h \
+ celt/os_support.h /usr/include/string.h /usr/include/sys/string.h \
+ /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/4.9.2/include/stdarg.h \
+ /usr/include/sys/types.h /usr/include/machine/types.h \
+ /usr/include/cygwin/types.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/byteswap.h \
+ /usr/include/bits/wordsize.h /usr/include/sys/_timespec.h \
+ /usr/include/sys/sysmacros.h /usr/include/sys/stdio.h celt/mathops.h \
+ celt/entcode.h /usr/lib/gcc/x86_64-pc-cygwin/4.9.2/include/limits.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/4.9.2/include/syslimits.h \
+ /usr/lib/gcc/x86_64-pc-cygwin/4.9.2/include-fixed/limits.h \
+ /usr/include/limits.h /usr/include/features.h celt/ecintrin.h \
+ celt/stack_alloc.h
+
+config.h:
+
+celt/_kiss_fft_guts.h:
+
+celt/kiss_fft.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/machine/ieeefp.h:
+
+/usr/include/_ansi.h:
+
+/usr/include/newlib.h:
+
+/usr/include/sys/config.h:
+
+/usr/include/sys/features.h:
+
+/usr/include/cygwin/config.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/4.9.2/include/stddef.h:
+
+/usr/include/sys/reent.h:
+
+/usr/include/_ansi.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/machine/_default_types.h:
+
+/usr/include/sys/lock.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/machine/stdlib.h:
+
+/usr/include/alloca.h:
+
+/usr/include/cygwin/stdlib.h:
+
+/usr/include/cygwin/wait.h:
+
+/usr/include/math.h:
+
+celt/arch.h:
+
+include/opus_types.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/4.9.2/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/sys/_intsup.h:
+
+/usr/include/sys/_stdint.h:
+
+include/opus_defines.h:
+
+include/opus_types.h:
+
+celt/os_support.h:
+
+/usr/include/string.h:
+
+/usr/include/sys/string.h:
+
+/usr/include/stdio.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/4.9.2/include/stdarg.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/machine/types.h:
+
+/usr/include/cygwin/types.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/byteswap.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/sys/_timespec.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/sys/stdio.h:
+
+celt/mathops.h:
+
+celt/entcode.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/4.9.2/include/limits.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/4.9.2/include/syslimits.h:
+
+/usr/lib/gcc/x86_64-pc-cygwin/4.9.2/include-fixed/limits.h:
+
+/usr/include/limits.h:
+
+/usr/include/features.h:
+
+celt/ecintrin.h:
+
+celt/stack_alloc.h:

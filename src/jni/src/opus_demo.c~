@@ -1,0 +1,146 @@
+#include "config.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+#include "../opustool/opusaudio.h"
+
+void print_use_demo(void)
+{
+	printf("opus_demo for encode and decode!\n");
+	printf("Usage:\n");
+	printf("opus_demo d|e input output option\n");
+	printf("d\tdecoding\n");
+	printf("e\tencoding\n");
+	printf("m\tmemorycodec\n");
+	printf("r\tsimulate audio record\n");
+
+}
+void mem_codec(char * input, char * output, char * option)
+{
+	char bufFileOut[] = "ThisStringisNeeded.wav";
+	char * addr = NULL;
+	long capacity = 0;
+	int rst = -1;
+	FILE *fmem = open_memstream(&addr, &capacity);
+	if(!fmem) {
+		perror("open memory file failed!");
+		return;
+	}
+
+
+	rst = decode_c(input, bufFileOut, option, fmem);
+
+//	fprintf(fmem,"%s","helloworld!");
+	fflush(fmem);
+//  don't need to
+//	if(fmem)
+//		fclose(fmem);
+
+
+    char bufFileIn[] = "ThisStringisNeeded.opus";
+
+
+    if(!addr || capacity == 0) {
+        perror("bytebuffer correpted!");
+        return ;
+    }
+
+    fmem = fmemopen(addr, capacity, "rb");
+    if(!fmem) {
+        perror("open memory file failed!");
+
+    }
+
+    rst = encode_c(bufFileIn, output, option, fmem);
+
+//    while(!feof(fmem))
+//    {
+//    	char c;
+//    	int suc = fscanf(fmem, "%c", &c);
+//    	printf("%c",c);
+//    }
+//    if(fmem)
+//        fclose(fmem);
+
+    free(addr);
+}
+
+void simu_record(char * input, char * output, char * option)
+{
+	startRecording(output);
+
+	FILE *fp;
+	if((fp = fopen(input, "r")) == NULL )
+	{
+		printf("Open File error!");
+		return;
+	}
+	const unsigned int len = 1920;
+	unsigned int curLen = 0;
+	uint8_t *buffer = (uint8_t *)malloc(sizeof(char) * len);
+	while(!feof(fp))
+	{
+		curLen = fread(buffer, 1, len,fp);
+		writeFrame(buffer, curLen);
+	}
+
+	free(buffer);
+	fclose(fp);
+	stopRecording();
+}
+
+int main(int argc, char *argv[])
+{
+
+	char *input;
+	char *output;
+	char *option;
+	char tmp[1024]={0};
+
+	char op = argv[1][0];
+
+
+    if (argc < 4 )
+    {
+       print_use_demo();
+       return EXIT_FAILURE;
+    }
+    else if (argc > 4)
+    {
+    	option = tmp;
+    	int i;
+    	char *p = tmp;
+    	for (i = 4; i < argc; i++)
+    	{
+    		strcpy(p, argv[i]);
+    		p += strlen(argv[i]) - 1;	//remove '\0'
+    	}
+    }
+
+    input = argv[2];
+    output = argv[3];
+
+    switch (op)
+    {
+    case 'e':
+    	encode_c(input, output, option, NULL);
+    	break;
+    case 'd':
+    	decode_c(input, output, option, NULL);
+    	break;
+    case 'm':
+        mem_codec(input, output, option);
+        break;
+    case 'r':
+        simu_record(input, output, option);
+        	break;
+    default:
+    	print_use_demo();
+    	break;
+     }
+
+
+    return EXIT_SUCCESS;
+}
