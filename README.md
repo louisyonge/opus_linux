@@ -26,6 +26,7 @@ The is a demo on how to use Opus codec for Linux server. It can encode an opus f
 OpusTool tool = new OpusTool();
 String fin = "xxx", fout = "xxx";
 ByteBuffer buf = tool.decode(fin, null);
+..dosomething(buf)... //modify the PCM data if you want to
 tool.encode(buf, fout, null);    
 tool.releaseByteBuffer(buf);//free memory
 ```
