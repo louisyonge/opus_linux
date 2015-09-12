@@ -4,14 +4,14 @@ Welcome to the Opus demo for Linux server.
 
 ### Summary ###
 
-The is a demo on how to use Opus codec for Linux server. It can encode an opus file to memory buffer and decode the buffer to an opus file.  
+The is a demo on how to use Opus codec for Linux server. It can encode an opus file to a memory buffer and decode the buffer to an opus file.  
 
 
 ### Getting started ###
 
 * pre-requisites  
 
-1. JDK v1.8 or higher  
+1. JDK v1.7 or higher  
 2. Eclipse
 
 * Summary of set up:
